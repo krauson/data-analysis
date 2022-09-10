@@ -36,8 +36,8 @@ def classify_one_instance(data, instance: list[dict], data_vals):
 
                 chance_to_be_poison.append(uniq_val_precentages)
 
-    chance_to_be_edible.append(edible_precentages)
-    chance_to_be_poison.append(poison_precentages)
+    # chance_to_be_edible.append(edible_precentages)
+    # chance_to_be_poison.append(poison_precentages)
 
     edible_chances = 1
     for chance in chance_to_be_edible:
