@@ -90,8 +90,8 @@ def check_model(data: tuple[dict], filname: str, data_vals):
         succuss_precentages = num_of_true / len(model_check)
 
         print("model_check:", model_check)
-
-        print("succuss_precentages",succuss_precentages)
+        print("model_check length:", len(model_check))
+        print(f"succuss_precentages: {succuss_precentages * 100:.2f}%")
 
 
 def get_instance(filename):
