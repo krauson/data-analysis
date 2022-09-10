@@ -1,0 +1,10 @@
+class,cap-shape,cap-surface,cap-color,bruises,odor
+p,x,s,n,t,p
+e,x,s,y,t,a
+e,b,s,w,t,l
+p,x,y,w,t,p
+e,x,s,g,f,n
+e,x,y,y,t,a
+e,b,s,w,t,a
+e,b,y,w,t,l
+p,x,y,w,t,p
