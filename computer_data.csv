@@ -1,0 +1,15 @@
+class,age,income,student,credit_rating
+no,youth,high,no,fair
+no,youth,high,no,excellent
+no,senior,low,yes,excellent
+no,youth,medium,no,fair
+no,senior,medium,no,excellent
+yes,middle_age,high,no,fair
+yes,senior,medium,no,fair
+yes,senior,low,yes,fair
+yes,middle_age,low,yes,excellent
+yes,youth,low,yes,fair
+yes,senior,medium,yes,fair
+yes,youth,medium,yes,excellent
+yes,middle_age,medium,no,excellent
+yes,middle_age,high,yes,fair

@@ -1,7 +1,6 @@
 import copy
 import csv
-
-from data_funcs import *
+import logging
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -16,6 +15,7 @@ def get_possible_classes(instances: list[dict]):
 
 
 def get_instances_from_csv(filename: str):
+    # with open(filename, 'r') as csv_file:
     csv_file = open(filename)
     instances = csv.DictReader(csv_file, delimiter=',')
     return instances
@@ -58,49 +58,11 @@ def build_model(data, model):
     return model
 
 
-def get_num_of_instance_per_category(data):
-    num_of_instances = {}
-    for cls in data:
-        for col_name in data[cls].keys():
-            col_vals = data[cls][col_name]
-            cls_num_of_instances = len(col_vals)
-            num_of_instances[cls] = cls_num_of_instances
-            # logging.debug(f"The number of instances for {cls} class is {cls_num_of_instances}")
 
-
-    print("num_of_instances", num_of_instances)
-    return num_of_instances
-
-
-def calc_chances_for_each_cls(frequencies: dict):
-    chances_to_cls = {cls: 1 for cls in frequencies}
-
-    for cls in frequencies:
-        for i in range(len(frequencies[cls])):
-            chances_to_cls[cls] *= frequencies[cls][i]
-
-    print(f"chances for classes: {chances_to_cls}")
-
-
-def classify_one_instance(model, instance:dict, data):
-    num_of_instances_per_cls = get_num_of_instance_per_category(data)
-    frequencies = {cls:[] for cls in model}
-    print("instance", instance)
-
-    for cls in frequencies:
-        for col in instance:
-            col_val = instance[col]
-            frequencies[cls].append(model[cls][col][col_val])
-
-    total_instances = sum([num_of_instances_per_cls[cls] for cls in num_of_instances_per_cls])
-    print(total_instances)
-    for cls in frequencies:
-        cls_frequncy = num_of_instances_per_cls[cls] / total_instances
-        frequencies[cls].append(cls_frequncy)
-
-    print("frequencies:", frequencies)
-
-    calc_chances_for_each_cls(frequencies)
+def classify_one_instance(model, instance:dict):
+    frequencies = []
+    for col in instance:
+        frequencies = model[]
 
 def get_num_of_instances(instances):
     counter = 0
@@ -132,24 +94,7 @@ def build_data_struct(col_names):
     fill_data_with_vals(data, instances)
     build_model(data, model)
 
-    comp_instance = 'comp_instance.csv'
-
-    instance = get_one_instances_from_csv(comp_instance)
-
-    classify_one_instance(model, instance, data)
-
-
-
-def get_one_instances_from_csv(instance_file):
-    csv_file = open(instance_file)
-    instances = csv.DictReader(csv_file, delimiter=',')
-    for instance in instances:
-        return instance
-
-
-
 if __name__ == '__main__':
     # filename = 'mushroom_20.csv'
-
     filename = 'computer_data.csv'
     build_data_struct(filename)
