@@ -14,17 +14,22 @@ def get_col_vals(filename: str):
     file = open(filename, 'r')
     lines_as_dicts = csv.DictReader(file)
 
+    # print("lines_as_dicts",lines_as_dicts)
+
     col_names = get_col_names(filename)
     col_values = {}
 
     for line in lines_as_dicts:
+        # print(f"line = {line}")
         for col in col_names:
             if col not in col_values:
                 col_values[col] = []
             col_values[col].append(line[col])
 
+    # print(col_values)
     del col_values['class']
     return col_values
+
 
 
 def get_col_unique_vals(all_vals_in_each_col:dict) ->dict:
@@ -84,6 +89,9 @@ def check_model(data: tuple[dict], filname: str, data_vals):
             del line['class']
             model_class = classify_instance(data, line, data_vals)
             is_model_correct = model_class == real_class
+            print(f"model class: {model_class}, real class: {real_class}")
+            print(f"is_model_correct: {is_model_correct}")
+
             model_check.append(is_model_correct)
 
         num_of_true = model_check.count(True)
@@ -99,3 +107,7 @@ def get_instance(filename):
         instance = csv.DictReader(instance_file)
         instance = list(instance)[0]
         return instance
+
+
+if __name__ == "__main__":
+    get_col_vals('data_test5.csv')

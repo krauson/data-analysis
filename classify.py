@@ -27,17 +27,20 @@ def classify_one_instance(data, instance: list[dict], data_vals):
                 chance_to_be_edible.append(uniq_val_precentages)
 
     # build edible model
-
     for col_name in poisonous_data:
         possible_vals = poisonous_data[col_name]
         for uniq_val in possible_vals:
             if uniq_val == instance[col_name]:
                 uniq_val_precentages = poisonous_data[col_name][uniq_val]
-
                 chance_to_be_poison.append(uniq_val_precentages)
 
-    # chance_to_be_edible.append(edible_precentages)
-    # chance_to_be_poison.append(poison_precentages)
+    chance_to_be_edible.append(edible_precentages)
+    chance_to_be_poison.append(poison_precentages)
+
+    print("instance:",instance)
+
+    print("chance_to_be_edible", chance_to_be_edible)
+    print("chance_to_be_poison", chance_to_be_poison)
 
     edible_chances = 1
     for chance in chance_to_be_edible:
