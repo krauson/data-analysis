@@ -21,4 +21,6 @@ def fill_data_with_vals(data, instances):
         del instance['class']
         for col_name, value in instance.items():
             data[instance_cls][col_name].append(value)
+
+    return data
     # logging.debug(data)
