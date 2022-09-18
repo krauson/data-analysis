@@ -1,6 +1,12 @@
 import os
 from data_funcs import get_col_names
 
+
+class Csv:
+    def __init__(self):
+        self.classifier
+        self.data
+
 def delete_classified_files(classified_files: tuple) -> None:
     for filename in classified_files:
         if os.path.exists(filename):
