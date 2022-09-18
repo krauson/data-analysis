@@ -235,15 +235,15 @@ def get_instances_from_csv(dataset_file):
 if __name__ == '__main__':
     # filename = 'mushroom_20.csv'
 
-    comp_train_data_file = 'computer_data.csv'
-    mush_train_data_file = 'mushrooms_70%.csv'
-    phising_train_data_file = 'phising70.csv'
+    comp_train_data_file = r'csv files\computer_data.csv'
+    mush_train_data_file = r'csv files\mushrooms_70%.csv'
+    phising_train_data_file = r'csv files\phising70.csv'
 
-    comp_instance_file = 'comp_instance.csv'
-    mush_dataset_test = '30.csv'
-    phish_dataset_test = 'phising30.csv'
+    comp_instance_file = r'csv files\comp_instance.csv'
+    mush_dataset_test = r'csv files\30 data half p and half e.csv'
+    phish_dataset_test = r'csv files\phising70.csv'
 
-    main(comp_train_data_file, comp_instance_file)
+    # main(comp_train_data_file, comp_instance_file)
     # main(mush_train_data_file, mush_dataset_test)
-    # main(phising_train_data_file, phish_dataset_test)
+    main(phising_train_data_file, phish_dataset_test)
 
