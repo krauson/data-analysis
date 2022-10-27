@@ -5,4 +5,4 @@ This is a prediction tool according to a naive Bayesian model (a statistical app
 
 This Software receives data (csv files) , studying the data and , performs statistics according to a naive Bayesian model and presents the classification results.
 
-The accuracy that required from  us is 90% accuracy Our software returns 96.92% accuracy As of this time
+The accuracy that required from  us is 90% accuracy Our software returns 96.92% accuracy As of this time.
